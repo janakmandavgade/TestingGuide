@@ -1,0 +1,17 @@
+Configure: Enable the coverage flag.
+
+Bash
+cmake -B build -DENABLE_COVERAGE=ON ..
+Build:
+
+Bash
+cmake --build build
+Run: This executes the code and generates the raw .gcda data.
+
+Bash
+./build/run_tests
+Report: Turn that data into a pretty website.
+
+Bash
+cmake --build build --target coverage_report
+After running the final command, open build/out_coverage/index.html in your browser. You will see a line-by-line breakdown of which parts of your calculator code were actually executed by your tests.
